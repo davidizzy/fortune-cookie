@@ -25,6 +25,13 @@ class MainHandler(webapp2.RequestHandler):
         number_paragraph = "<p>" + number_sentence + "</p>"
         self.response.write(header + number_paragraph)
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+class LoginHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write("Thanks for trying to login!")
+
+routes = [
+    ('/', MainHandler),
+    ('/login', LoginHandler)
+]
+
+app = webapp2.WSGIApplication(routes, debug=True)
