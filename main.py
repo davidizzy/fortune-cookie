@@ -30,7 +30,7 @@ def getRandomFortune():
     ]
 
     #randomly select one of the fortunes
-    index = random.randint(0,(len(fortunes)-1))
+    index = random.randrange(len(fortunes))
 
     return fortunes[index]
 
